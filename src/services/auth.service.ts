@@ -6,7 +6,7 @@ import {
   ConfirmSignUpCommand,
   AuthFlowType,
 } from '@aws-sdk/client-cognito-identity-provider';
-import config from '@/config';
+import config from '@/configs';
 
 type InputRegister = {
   username: string;

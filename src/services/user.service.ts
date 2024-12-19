@@ -1,6 +1,6 @@
 import * as bcrypt from 'bcrypt';
 import { User } from '@/entity/user.entity';
-import { AppDataSource } from '@/config/db-connection';
+import { AppDataSource } from '@/configs/db-connection';
 import { UserCreate, UserLogin } from '@/common/user';
 import { Repository } from 'typeorm';
 import Encrypt from '@/helpers/encrypt';

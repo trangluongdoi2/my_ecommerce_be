@@ -1,11 +1,10 @@
 import express, { Response } from 'express';
-import path from 'path';
 import cors from 'cors';
 import bodyParser from 'body-parser';
-import { AppDataSource } from '@/config/db-connection';
-import swaggerPlugin from '@/config/swagger';
-import config from './config';
-import logger from './config/logger';
+import { AppDataSource } from '@/configs/db-connection';
+import swaggerPlugin from '@/configs/swagger';
+import configs from './configs';
+import logger from './configs/logger';
 
 function initApp() {
   try {
@@ -14,10 +13,10 @@ function initApp() {
       app.use(
         cors({
           origin: '*',
-          methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+          methods: 'GET, HEAD, PUT, PATCH, POST, DELETE',
           credentials: true,
-          allowedHeaders: ['*']
-        })
+          allowedHeaders: ['*'],
+        }),
       );
       app.use(bodyParser.urlencoded({ extended: true }));
       app.use(bodyParser.json());
@@ -25,8 +24,8 @@ function initApp() {
         res.send('<h1>My Todo App!!</h1>');
       });
       swaggerPlugin(app);
-      app.listen(config.app_port, () => {
-        const url = `http://localhost:${config.app_port}`;
+      app.listen(configs.app_port, () => {
+        const url = `http://localhost:${configs.app_port}`;
         console.log(`App is running on ${url}`);
         console.log(`Swagger is running on ${url}/api-docs`);
         logger.info(`App is running on ${url}`);

@@ -1,5 +1,5 @@
 import { CognitoUserPool } from 'amazon-cognito-identity-js';
-import config from '@/config';
+import config from '@/configs';
 
 const cognitoService = {
   createUserPool: () => {

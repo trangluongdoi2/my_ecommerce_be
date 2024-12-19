@@ -1,5 +1,5 @@
 import jwt from 'jsonwebtoken';
-import config from '@/config';
+import config from '@/configs';
 
 const OPTIONS = {
   ACCESS_TOKEN_TIME_ALIVE: '1h', // 1 hour

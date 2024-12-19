@@ -3,8 +3,8 @@ import * as JWT from 'jsonwebtoken';
 import { Repository } from 'typeorm';
 import httpStatus from 'http-status';
 import { RoleUser } from '@/common/user';
-import config from '@/config';
-import { AppDataSource } from '@/config/db-connection';
+import config from '@/configs';
+import { AppDataSource } from '@/configs/db-connection';
 import { User } from '@/entity/user.entity';
 import ApiError from '@/utils/apiError';
 
